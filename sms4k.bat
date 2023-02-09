@@ -35,28 +35,47 @@
 color C
 title RG Text Game
 echo -------------------------------------------------
-echo Welcome to the mario sunshine 4k mod installer(by cooley)
+echo Welcome to the mario sunshine 4k/60 fps mod installer(credit to cooley)
 echo.
 echo -------------------------------------------------
 echo.
 echo.
 echo.
-echo would you like to install the mario sunshine 4k mod?
+cls
+echo would you like to install the super mario sunshine 4k mod?
 echo Choices: yes/no
 set /p choice=
-if /i "%choice%"=="no" GOTO leave
-if /i "%choice%"=="yes" GOTO install
+if /i "%choice%"=="no" GOTO asktoinstall4k60
+if /i "%choice%"=="yes" GOTO installsms4k
 
 
+:asktoinstall4k60
+cls
+echo would you like to install the super mario sunshine 4k mod with 60 fps instead?
+echo Choices: yes/no
+set /p choice=
+if /i "%choice%"=="no" GOTO exit
+if /i "%choice%"=="yes" GOTO installsms4k60
 
-:install
+
+:installsms4k60
+cls
 powershell Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 choco install 7zip --force -y
 cd %USERPROFILE%\Documents
-curl https://cdn-150.anonfiles.com/DfkbNdW6y7/53c40b86-1675897192/DolphinEmulatorExtract2.exe --output DolphinEmulatorExtractor2.exe
-start "" DolphinEmulatorExtractor2.exe
+curl https://cdn-150.anonfiles.com/d8MbO1Way8/51c8c020-1675916768/DolphinEmulatorsms4k60Windows.exe --output DolphinEmulatorsms4k60Windows.exe
+start "" DolphinEmulatorsms4k60Windows.exe
+
+
+:installsms4k
+cls
+powershell Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+choco install 7zip --force -y
+cd %USERPROFILE%\Documents
+curl https://cdn-142.anonfiles.com/R8LfOdW3y7/3afa7ea6-1675916690/DolphinEmulatorsms4kWindows.exe --output DolphinEmulatorsms4kWindows.exe
+start "" DolphinEmulatorsms4kWindows.exe
 exit
 
 
-:leave
+:exit
 exit
