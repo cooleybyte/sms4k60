@@ -1,0 +1,1 @@
+curl -L -O https://download1592.mediafire.com/wujxvz7vub9gMantPFxTBLM1hmAWlD6tEm4FrveQPFs7t6w65pY-VjjEVNWCokUCbUeHblkXOjJLYcXvXlzxuA5Xqg/7d3rowu6bhnm54p/SmS4k60.dmg
